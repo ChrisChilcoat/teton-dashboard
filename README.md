@@ -1,8 +1,8 @@
-# Social Media UI
+# Teton Dashboard
 
-A collection of widgets and layouts from popular social media applications.
+A complete react dasboard.
 
-[View Demo](https://chrischilcoat.github.io/social-media-ui/)
+[View Demo](https://chrischilcoat.github.io/teton-dashboard/)
 
 ## Install
 
@@ -25,4 +25,4 @@ This project uses Github Pages served from the `/docs` directory.
 
 **Step 3:** Make sure your GitHub Pages site is currently being built from the `/docs` folder in the `master` branch.
 
-[Update Build Source](https://github.com/ChrisChilcoat/social-media-ui/settings/pages)
+[Update Build Source](https://github.com/ChrisChilcoat/teton-dashboard/settings/pages)

@@ -3,13 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 export default function SiteHeader() {
   return (
-    <header className="w-screen bg-gradient-to-l from-blue-900 to-green-400">
+    <header className="w-screen bg-gradient-to-l from-purple-900 to-blue-400">
       <nav className="max-w-screen-xl mx-auto " aria-label="Top">
-        <div className="flex items-center justify-between w-full py-3 border-b border-green-800 lg:border-none">
+        <div className="flex items-center justify-between w-full py-3 border-b border-purple-800 lg:border-none">
           <div className="flex items-center">
             <NavLink to="/" className="flex items-center">
               <span className="flex-1 ml-2 text-2xl font-extrabold text-white uppercase sm:text-3xl">
-                <span className="">Social Media</span> <span className="opacity-80">UI</span>
+                <span className="">Teton</span> <span className="opacity-80">Dashboard</span>
               </span>
             </NavLink>
             <div className="hidden ml-10 space-x-8 lg:block">

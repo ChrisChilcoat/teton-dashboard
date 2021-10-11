@@ -5,16 +5,23 @@ import copy from "copy-to-clipboard";
 import ReactTooltip from "react-tooltip";
 import { NavLink } from 'react-router-dom';
 
+import { Switch } from '@headlessui/react'
 
 import { 
   CodeIcon, 
   ClipboardIcon,
-  ArrowsExpandIcon 
+  ArrowsExpandIcon,
+  SunIcon,
+  MoonIcon 
 } from '@heroicons/react/solid';
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 export default function Showcase(props) {
   
-  const [syntaxBlock, setSyntaxBlock] = useState('');
+  const [syntaxBlock, setSyntaxBlock] = useState(props.syntaxBlock);
 
   const initalDelay = 500 // Keeps tooltips from becoming annaying.
   const secondaryDelay = 0 // Speed up tooltips once they are open.
@@ -23,6 +30,8 @@ export default function Showcase(props) {
 
   const [delay, setDelay] = useState(null)
   const [timeoutHandler, setTimeoutHandler] = useState(null)
+
+  const [DarkModeEnabled, setDarkModeEnabled] = useState(false)
 
   const reset = () => {
     clearTimeout(timeoutHandler)
@@ -50,7 +59,7 @@ export default function Showcase(props) {
     if (syntaxBlock === '') {
       fetch( process.env.PUBLIC_URL + '/tmp/' + props.syntaxBlock + '.js:r.txt')
       .then((r) => r.text())
-      .then(text  => {setSyntaxBlock(text)})  
+      .then(text  => {setSyntaxBlock(props.syntaxBlock)})  
     } else {
       setSyntaxBlock('');
     } 
@@ -90,6 +99,8 @@ export default function Showcase(props) {
       </div>
     )
   }
+
+
   
   return (
     <div className="bg-white border border-gray-200 rounded-lg border-1 mb-14">
@@ -104,6 +115,7 @@ export default function Showcase(props) {
               </NavLink>
             </li>
           }
+        
           <li>
             <button onClick={toggleCodeBlock} onFocus={handleFocus} aria-label="View Code Example" data-tip data-for={formatID(props.title) + '-show'}  className="inline-flex items-center px-2.5 py-2 text-gray-500 hover:text-gray-700 font-medium bg-white border border-transparent rounded-md hover:bg-gray-100">
               <CodeIcon className="w-5 h-5" />
@@ -117,12 +129,60 @@ export default function Showcase(props) {
               <ClipboardIcon className="w-5 h-5" />
               <ReactTooltip id={formatID(props.title)+'-copy'} arrowColor="transparent" delayShow={delay} place="top" effect="solid" aria-hidden="true">{copyBtnText}</ReactTooltip>
             </button>    
-          </li>      
+          </li>  
+          <li>
+
+
+          <Switch
+            checked={DarkModeEnabled}
+            onChange={setDarkModeEnabled}
+            className={classNames(
+              DarkModeEnabled ? 'bg-gray-500' : 'bg-gray-200',
+              'relative inline-flex m-1.5 flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
+            )}
+          >
+            <span className="sr-only">Use setting</span>
+            <span
+              className={classNames(
+                DarkModeEnabled ? 'translate-x-5' : 'translate-x-0',
+                'pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200'
+              )}
+            >
+              <span
+                className={classNames(
+                  DarkModeEnabled ? 'opacity-0 ease-out duration-100' : 'opacity-100 ease-in duration-200',
+                  'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity'
+                )}
+                aria-hidden="true"
+              >
+                <SunIcon className="w-3 h-3 text-gray-700"/>
+              </span>
+              <span
+                className={classNames(
+                  DarkModeEnabled ? 'opacity-100 ease-in duration-200' : 'opacity-0 ease-out duration-100',
+                  'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity'
+                )}
+                aria-hidden="true"
+              >
+            <MoonIcon className="w-3 h-3 text-gray-700"/>
+
+              </span>
+            </span>
+          </Switch>
+
+
+
+          </li>    
         </ul>
       </div>
-      <div className="bg-gray-100">
-        { syntaxBlock ? <RenderSyntax/> : <RenderExample component={props.component} class={props.class}/> }
+      <div className={ DarkModeEnabled ? 'dark' : ''}>
+        <div className="bg-gray-100 dark:bg-gray-800">
+          {/* syntaxBlock ? <RenderSyntax/> : <RenderExample component={props.component} class={props.class}/> */}
+          <RenderExample component={props.component} class={props.class}/>
+          <RenderSyntax/>
+        </div>
       </div>
     </div>
   )
 }
+

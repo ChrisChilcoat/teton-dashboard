@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/*
 @layer utilities {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -19,5 +18,5 @@
     visibility: visible;
   }
 } 
-*/
+
 

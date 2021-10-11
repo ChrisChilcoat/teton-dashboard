@@ -2,20 +2,22 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 
 const elements = [
-  { name: 'Buttons', items: '7', href: '/components/facebook/buttons', imageUrl: ''},
-  { name: 'Lists', items: '4', href: '/components/facebook/lists', imageUrl: ''},
+  { name: 'Buttons', items: '8', href: '/components/teton/buttons', imageUrl: ''},
+  { name: 'Lists', items: '3', href: '/components/teton/lists', imageUrl: ''},
+
 ]
 
 const components = [
-  { name: 'Header', items: '1', href: '/components/facebook/header', imageUrl: ''},
-  { name: 'Composer', items: '1', href: '/components/facebook/composer', imageUrl: ''},
-  { name: 'Pagers', items: '2', href: '/components/facebook/pagers', imageUrl: ''},
-  { name: 'Posts', items: '3', href: '/components/facebook/posts', imageUrl: ''},
-  { name: 'Sponsored', items: '1', href: '/components/facebook/sponsored', imageUrl: ''},
+  { name: 'Header', items: '1', href: '/components/teton/header', imageUrl: ''},
+  { name: 'Forms', items: '3', href: '/components/teton/forms', imageUrl: ''},
+  //{ name: 'Composer', items: '1', href: '/components/teton/composer', imageUrl: ''},
+  //{ name: 'Pagers', items: '2', href: '/components/teton/pagers', imageUrl: ''},
+  //{ name: 'Posts', items: '3', href: '/components/teton/posts', imageUrl: ''},
+  //{ name: 'Sponsored', items: '1', href: '/components/teton/sponsored', imageUrl: ''},
 ]
 
 const examples = [
-  { name: 'News Feed', items: '1', href: '/components/facebook/news-feed', imageUrl: ''},
+  { name: 'Dashboard', items: '1', href: '/components/teton/dashboard', imageUrl: ''},
 ]
 
 const Row = props => {
@@ -46,21 +48,21 @@ export default function SitePageComponents() {
   return (
     <section class="divide-y divide-gray-200 mt-10">
       <header class="pb-6">
-        <h2 id="facebook" class="text-2xl font-extrabold text-gray-900">Facebook</h2>
+        <h2 id="teton" class="text-2xl font-extrabold text-gray-900">Teton</h2>
         <p className="mt-3 text-base text-gray-500">
-          Examples of elements, components, and layouts from the worlds most popular social media website.
+          Examples of elements, components, and layouts from the Teton Dashboard UI.
         </p>
       </header>
       <div class="grid grid-cols-3 xl:grid-cols-4 py-8 gap-x-8 gap-y-6">
-        <h3 id="facebook-elements" class="text-gray-900 font-semibold col-span-3 xl:col-span-1">Elements</h3>
+        <h3 id="teton-elements" class="text-gray-900 font-semibold col-span-3 xl:col-span-1">Elements</h3>
         <Row list={elements} />
       </div> 
       <div class="grid grid-cols-3 xl:grid-cols-4 py-8 gap-x-8 gap-y-6">
-        <h3  id="facebook-components" class="text-gray-900 font-semibold col-span-3 xl:col-span-1">Components</h3>
+        <h3  id="teton-components" class="text-gray-900 font-semibold col-span-3 xl:col-span-1">Components</h3>
         <Row list={components} />
       </div>
       <div class="grid grid-cols-3 xl:grid-cols-4 py-8 gap-x-8 gap-y-6">
-        <h3 id="facebook-page-examples" class="text-gray-900 font-semibold col-span-3 xl:col-span-1">Page Examples</h3>
+        <h3 id="teton-page-examples" class="text-gray-900 font-semibold col-span-3 xl:col-span-1">Page Examples</h3>
         <Row list={examples} />
       </div> 
     </section>

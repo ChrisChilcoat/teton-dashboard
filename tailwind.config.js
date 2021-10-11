@@ -1,11 +1,23 @@
+const colors = require('tailwindcss/colors')
+const { textColor } = require('tailwindcss/defaultTheme')
+
 module.exports = {
   experimental: {
     applyComplexClasses: true,
   },
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class' or 'false'
   theme: {
     extend: {
+      colors: {
+        gray: colors.coolGray,
+        blue: colors.sky,
+        red: colors.rose,
+        pink: colors.fuchsia,
+      },
+      fontFamily: {
+        varela: "'Varela Round', sans-serif"
+      },
       scale: {
         '98': '.98',
         '102': '1.02',
@@ -25,9 +37,10 @@ module.exports = {
   variants: {
     extend: {
       scale: ['active', 'group-hover', 'focus', 'group-focus'],
-      opacity: ['active', 'group-hover', 'focus', 'group-focus'],
-      borderColor: ['active', 'group-hover', 'focus', 'group-focus'],  
-      backgroundColor: ['active', 'group-hover', 'focus', 'group-focus'],  
+      opacity: ['active', 'group-hover', 'focus', 'group-focus', 'disabled'],
+      borderColor: ['active', 'group-hover', 'focus', 'group-focus', 'disabled'],  
+      backgroundColor: ['active', 'group-hover', 'focus', 'group-focus', 'disabled'],
+      textColor: ['disabled']
     }
   },
   plugins: [
