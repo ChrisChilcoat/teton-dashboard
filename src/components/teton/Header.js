@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react'
 
 import { Popover, Transition } from '@headlessui/react'
 
-import { user, data, company, resources, navigation, components } from './Data'
+import { user, data, company, resources, navigation, layouts, components } from './Data'
 
 import {
   MenuIcon,
@@ -65,56 +65,7 @@ function Header({orientation, collapsed}) {
                                     ))}
                                   </ul>
                                 </div>
-                                <div>
-                                  <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Resources</h3>
-                                  <ul role="list" className="mt-5 space-y-6">
-                                    {company.map((item) => (
-                                      <li key={item.name} className="flow-root">
-                                        <a
-                                          href={item.href}
-                                          className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 rounded-md hover:bg-gray-50"
-                                        >
-                                          <item.icon className="flex-shrink-0 w-6 h-6 text-gray-400" aria-hidden="true" />
-                                          <span className="ml-4">{item.name}</span>
-                                        </a>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                                <div>
-                                  <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Resources</h3>
-                                  <ul role="list" className="mt-5 space-y-6">
-                                    {resources.map((item) => (
-                                      <li key={item.name} className="flow-root">
-                                        <a
-                                          href={item.href}
-                                          className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 rounded-md hover:bg-gray-50"
-                                        >
-                                          <item.icon className="flex-shrink-0 w-6 h-6 text-gray-400" aria-hidden="true" />
-                                          <span className="ml-4">{item.name}</span>
-                                        </a>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
-                                <div>
-                                  <h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Resources</h3>
-                                  <ul role="list" className="mt-5 space-y-6">
-                                    {resources.map((item) => (
-                                      <li key={item.name} className="flow-root">
-                                        <a
-                                          href={item.href}
-                                          className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 rounded-md hover:bg-gray-50"
-                                        >
-                                          <item.icon className="flex-shrink-0 w-6 h-6 text-gray-400" aria-hidden="true" />
-                                          <span className="ml-4">{item.name}</span>
-                                        </a>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                </div>
                               </nav>
-                              
                             </div>
                           </Popover.Panel>
                         </Transition>
@@ -182,17 +133,17 @@ function Header({orientation, collapsed}) {
               <div className={(collapsed ? 'justify-center' : '') + " flex items-center flex-shrink-0 px-4"}>
                 <button className="flex items-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
                   <img className="inline-block w-auto h-8" src="https://tailwindui.com/img/logos/workflow-mark.svg?color=rose&shade=500" alt="Workflow"></img>
-                  <span className={(collapsed ? 'hidden' : '') + " ml-1 text-xl font-medium"}>Teton</span>
+                  <span className={(collapsed ? 'hidden' : '') + " ml-1 text-xl font-medium text-gray-300"}>Teton</span>
                 </button>
               </div>
               <nav className="flex-1 px-2 mt-5 space-y-1 bg-gray-800">
                 <div class="p-3.5">
                   {collapsed
                     ?<h3 className="flex justify-center text-sm font-medium tracking-wide text-gray-600 uppercase jusity-center"><DotsHorizontalIcon className="w-6 h-6"/><span className="sr-only">Resources</span></h3>
-                    :<h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Components</h3>
+                    :<h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Layouts</h3>
                   }
                   <ul className="mt-5 space-y-6">
-                    {components.map((item) => (
+                    {layouts.map((item) => (
                       <li key={item.name} className="flow-root">
                         <a
                           href={item.href}
@@ -208,52 +159,14 @@ function Header({orientation, collapsed}) {
                 <div class="p-3.5">
                   {collapsed
                     ?<h3 className="flex justify-center text-sm font-medium tracking-wide text-gray-600 uppercase jusity-center"><DotsHorizontalIcon className="w-6 h-6"/><span className="sr-only">Resources</span></h3>
-                    :<h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Dashboards</h3>
+                    :<h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Components</h3>
                   }
                   <ul className="mt-5 space-y-6">
-                    {company.map((item) => (
+                    {components.map((item) => (
                       <li key={item.name} className="flow-root">
                         <a
                           href={item.href}
-                          className={(collapsed ? "justify-center" : '') + " flex items-center p-3 -m-3 text-base font-medium text-gray-400 rounded-md hover:bg-gray-50"}
-                        >
-                          <item.icon className="flex-shrink-0 w-6 h-6 text-gray-400" aria-hidden="true" />
-                          {!collapsed && <span className="ml-4">{item.name}</span>}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div class="p-3.5">
-                  {collapsed
-                    ?<h3 className="flex justify-center text-sm font-medium tracking-wide text-gray-600 uppercase jusity-center"><DotsHorizontalIcon className="w-6 h-6"/><span className="sr-only">Resources</span></h3>
-                    :<h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Dashboards</h3>
-                  }
-                  <ul className="mt-5 space-y-6">
-                    {company.map((item) => (
-                      <li key={item.name} className="flow-root">
-                        <a
-                          href={item.href}
-                          className={(collapsed ? "justify-center" : '') + " flex items-center p-3 -m-3 text-base font-medium text-gray-400 rounded-md hover:bg-gray-50"}
-                        >
-                          <item.icon className="flex-shrink-0 w-6 h-6 text-gray-400" aria-hidden="true" />
-                          {!collapsed && <span className="ml-4">{item.name}</span>}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div class="p-3.5">
-                  {collapsed
-                    ?<h3 className="flex justify-center text-sm font-medium tracking-wide text-gray-600 uppercase jusity-center"><DotsHorizontalIcon className="w-6 h-6"/><span className="sr-only">Resources</span></h3>
-                    :<h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Dashboards</h3>
-                  }
-                  <ul className="mt-5 space-y-6">
-                    {company.map((item) => (
-                      <li key={item.name} className="flow-root">
-                        <a
-                          href={item.href}
-                          className={(collapsed ? "justify-center" : '') + " flex items-center p-3 -m-3 text-base font-medium text-gray-400 rounded-md hover:bg-gray-50"}
+                          className={(collapsed ? "justify-center" : "") + " flex items-center p-3 -m-3 text-base font-medium text-gray-400 rounded-md hover:bg-gray-50"}
                         >
                           <item.icon className="flex-shrink-0 w-6 h-6 text-gray-400" aria-hidden="true" />
                           {!collapsed && <span className="ml-4">{item.name}</span>}
