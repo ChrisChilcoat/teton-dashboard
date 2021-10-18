@@ -1,9 +1,24 @@
 import React, { useState, Children } from "react";
+import PropTypes from 'prop-types';
 
 import Button from './Button';
 import DropdownButton from './DropdownButton';
 
-const ButtonGroup = ({ children, variant, label, size, rounded, block, active }) => {
+ButtonGroup.propTypes = {
+  rounded: PropTypes.bool,
+  size: PropTypes.string,
+  label: PropTypes.string,
+  variant: PropTypes.string, 
+}
+
+ButtonGroup.defaultProps = {
+  rounded: false,
+  size: 'md',
+  label: '',
+  variant: 'secondary', 
+};
+
+function ButtonGroup({ children, variant, label, size, rounded}) {
 
   let first = ((rounded ? 'rounded-l-full' : '') + ' rounded-r-none mr-0')
   let middle = 'rounded-r-none rounded-l-none mr-0 ml-0'
@@ -15,8 +30,7 @@ const ButtonGroup = ({ children, variant, label, size, rounded, block, active })
   return (
     <div role="group" aria-label={label} className="flex-1">  
       {Children.map(arrayChildren, (child, index) => {
-        return (
-          
+        return (     
           <span onClick={!child.props.disabled ? () => setActiveButton(index) : null }>
             {child.type.name === 'Button' &&
               <Button

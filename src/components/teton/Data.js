@@ -43,10 +43,13 @@ const data = [
 ]
 
 const components =  [
-  { name: 'Alerts', href: '#', icon: InformationCircleIcon },
-  { name: 'Buttons', href: '#', icon: OfficeBuildingIcon },
-  { name: 'Button Groups', href: '#', icon: OfficeBuildingIcon },
-  { name: 'Breadcrumbs', href: '#', icon: OfficeBuildingIcon },
+  { name: 'Alerts', href: 'teton-dashboard#/components/alerts', icon: InformationCircleIcon },
+  { name: 'Buttons', href: 'teton-dashboard#/components/buttons', icon: OfficeBuildingIcon },
+  { name: 'Button Groups', href: 'teton-dashboard#/components/button-groups', icon: OfficeBuildingIcon },
+]
+
+const layouts =  [
+  { name: 'Three Column', href: 'teton-dashboard#/layouts/three-column-layout', icon: OfficeBuildingIcon },
 ]
 
 const company = [
@@ -67,4 +70,4 @@ const navigation = [
   { name: 'Reports', href: '#', icon: ChartBarIcon, current: false },
 ]
 
-export { user, data, company, resources, navigation, breadcrumb, components }
+export { user, data, company, resources, navigation, breadcrumb, components, layouts }

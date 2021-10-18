@@ -5,55 +5,21 @@ import copy from "copy-to-clipboard";
 import ReactTooltip from "react-tooltip";
 import { NavLink } from 'react-router-dom';
 
-import { Switch } from '@headlessui/react'
-
 import { 
-  CodeIcon, 
   ClipboardIcon,
   ArrowsExpandIcon,
-  SunIcon,
-  MoonIcon 
 } from '@heroicons/react/solid';
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
 
 export default function Showcase(props) {
   
-  const [syntaxBlock, setSyntaxBlock] = useState(props.syntaxBlock);
+  const [syntaxBlock, setSyntaxBlock] = useState( props.syntaxBlock );
 
   const initalDelay = 500 // Keeps tooltips from becoming annaying.
   const secondaryDelay = 0 // Speed up tooltips once they are open.
 
   const [copyBtnText, setCopyBtnText] = useState('Copy Markup');
 
-  const [delay, setDelay] = useState(null)
-  const [timeoutHandler, setTimeoutHandler] = useState(null)
-
-  const [DarkModeEnabled, setDarkModeEnabled] = useState(false)
-
-  const reset = () => {
-    clearTimeout(timeoutHandler)
-    setDelay(initalDelay)
-  }
-
-  const handleMouseEnter = () => {  
-    reset()
-    setTimeoutHandler(
-      setTimeout(() => { 
-        setDelay(secondaryDelay)
-      }, initalDelay)
-    )
-  }
-
-  const handleMouseLeave = () => {
-    reset()
-  }
-
-  const handleFocus = () => {
-    setDelay(secondaryDelay) 
-  }
+  const text= "My Text goes here";
 
   const toggleCodeBlock = () => {    
     if (syntaxBlock === '') {
@@ -74,9 +40,11 @@ export default function Showcase(props) {
     })
   }
 
-  const resetCopyBtnText = () => {
-    setCopyBtnText('Copy Markup');
-  }
+  const mytext = 
+`<p>test</p>
+<p>this is multiline text.</p>
+<div>more text</div>`;
+
 
   const formatID = props => {
     var str = props
@@ -86,7 +54,7 @@ export default function Showcase(props) {
 
   const RenderSyntax = props =>  {  
     return (
-      <SyntaxHighlighter language="javascript" style={a11yDark} showLineNumbers className="">
+      <SyntaxHighlighter language="javascript" style={a11yDark} showLineNumbers>
         {syntaxBlock}
       </SyntaxHighlighter>
     )
@@ -111,11 +79,11 @@ export default function Showcase(props) {
             <li>
               <NavLink to={props.expandedUrl} aria-label="View Full Sreen Example" data-tip data-for={formatID(props.title) + '-expand'}  className="inline-flex items-center px-2.5 py-2 text-gray-500 hover:text-gray-700 font-medium bg-white border border-transparent rounded-md hover:bg-gray-100">
                 <ArrowsExpandIcon className="w-5 h-5" />
-                <ReactTooltip class="" id={formatID(props.title)+'-expand'} arrowColor="transparent" delayShow={delay} place="top" effect="solid" aria-hidden="true">Expand</ReactTooltip>
+                <ReactTooltip class="" id={formatID(props.title)+'-expand'} arrowColor="transparent" place="top" effect="solid" aria-hidden="true">Expand</ReactTooltip>
               </NavLink>
             </li>
           }
-        
+          {/* 
           <li>
             <button onClick={toggleCodeBlock} onFocus={handleFocus} aria-label="View Code Example" data-tip data-for={formatID(props.title) + '-show'}  className="inline-flex items-center px-2.5 py-2 text-gray-500 hover:text-gray-700 font-medium bg-white border border-transparent rounded-md hover:bg-gray-100">
               <CodeIcon className="w-5 h-5" />
@@ -124,15 +92,17 @@ export default function Showcase(props) {
               </ReactTooltip>
             </button>
           </li>
+          */}
           <li>
-            <button onClick={copyToClipboard} onFocus={handleFocus} onMouseLeave={resetCopyBtnText} aria-label="Copy to Clipboard" data-tip data-for={formatID(props.title)+'-copy'}  className="inline-flex items-center px-2.5 py-2 text-gray-500 hover:text-gray-700 font-medium bg-white border border-transparent rounded-md hover:bg-gray-100">
+            <button onClick={copyToClipboard} aria-label="Copy to Clipboard" data-tip data-for={formatID(props.title)+'-copy'}  className="inline-flex items-center px-2.5 py-2 text-gray-500 hover:text-gray-700 font-medium bg-white border border-transparent rounded-md hover:bg-gray-100">
               <ClipboardIcon className="w-5 h-5" />
-              <ReactTooltip id={formatID(props.title)+'-copy'} arrowColor="transparent" delayShow={delay} place="top" effect="solid" aria-hidden="true">{copyBtnText}</ReactTooltip>
+              <ReactTooltip id={formatID(props.title)+'-copy'} arrowColor="transparent" place="top" effect="solid" aria-hidden="true">{copyBtnText}</ReactTooltip>
             </button>    
           </li>  
-          <li>
+       
 
-
+          {/*
+             <li>
           <Switch
             checked={DarkModeEnabled}
             onChange={setDarkModeEnabled}
@@ -169,15 +139,16 @@ export default function Showcase(props) {
               </span>
             </span>
           </Switch>
+               </li> 
+          */}
 
 
 
-          </li>    
+        
         </ul>
       </div>
-      <div className={ DarkModeEnabled ? 'dark' : ''}>
+      <div>
         <div className="bg-gray-100 dark:bg-gray-800">
-          {/* syntaxBlock ? <RenderSyntax/> : <RenderExample component={props.component} class={props.class}/> */}
           <RenderExample component={props.component} class={props.class}/>
           <RenderSyntax/>
         </div>
@@ -185,4 +156,3 @@ export default function Showcase(props) {
     </div>
   )
 }
-
