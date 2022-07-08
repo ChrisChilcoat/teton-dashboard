@@ -300,9 +300,9 @@ function Buttons() {
           `</Button>`}
         title="Avatar Buttons" 
       />
-       <span class='prose'>  
+      <span class='prose'>  
         <h2>API</h2>
-        <p>Button</p>
+        <h3>Button</h3>
       </span>
 
       <div className="flex flex-col my-8">

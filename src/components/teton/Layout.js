@@ -238,18 +238,7 @@ export default function DashboardLayout({header, sidebar, main, aside, }) {
           {RenderAside()}
         </div>
       </div> 
-      { RenderLayoutConfigPanel() }
+      {/* RenderLayoutConfigPanel() */}
     </div>
   )
 }
-
-{/* 
-TODO:
-Fix layout.js error
-Solve syntax highlighting
-solve global themeing/showcase themeing
-finish adding buttons to and designing sidebar header
-finish api tabels
-finish engineering layout/header and create documentation.
-design landing page
-*/}

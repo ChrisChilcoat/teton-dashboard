@@ -4,16 +4,8 @@ import { Dialog, Transition } from '@headlessui/react'
 import { XIcon, ExclamationIcon } from '@heroicons/react/outline'
 import { LinkIcon, PlusSmIcon, QuestionMarkCircleIcon, BellIcon, SwitchHorizontalIcon, SwitchVerticalIcon, DotsHorizontalIcon, ChevronDownIcon} from '@heroicons/react/solid'
 
-import { breadcrumb as Crumbtrail } from '../components/teton/Data'
 
 import Alert from '../components/teton/Alert'
-import Button from '../components/teton/Button'
-import ButtonGroup from '../components/teton/ButtonGroup'
-import Breadcrumb from '../components/teton/Breadcrumb'
-import DropdownButton from '../components/teton/DropdownButton'
-import Dropdown from '../components/teton/Dropdown'
-import Panel from '../components/teton/Panel'
-import QuantumToolbar from '../components/teton/QuantumToolbar'
 
 import Showcase from '../components/site/Showcase'
 
@@ -153,7 +145,7 @@ function Alerts() {
      
       <span class='prose'>  
         <h2>API</h2>
-        <p>Alert</p>
+        <h3>Alert</h3>
       </span>
 
       <div className="flex flex-col my-8">

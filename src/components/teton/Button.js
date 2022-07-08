@@ -35,7 +35,7 @@ Button.defaultProps = {
 
 function Button(props) {
 
-  var _base = "inline-flex relative align-middle justify-center items-center font-medium content-center leading-4 text-center shadow-sm disabled:opacity-40";
+  var _base = "inline-flex relative align-middle justify-center items-center font-medium content-center leading-4 text-center shadow-sm disabled:opacity-40 transform active:scale-95";
   let _focus = "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500";
   let _transition = "transition duration-300 ease-in-out";
 
@@ -49,15 +49,15 @@ function Button(props) {
   let _dark = ((props.active || props.loading ? "border-black bg-black shadow-inner" : "border-gray-900 bg-gray-900 hover:bg-gray-700 active:bg-black") + " text-white")
   let _link = ((props.active || props.loading ? "border-gray-300 bg-gray-300 shadow-inner" : "border-white bg-transparent hover:bg-gray-200 hover:text-blue-700 active:bg-gray-300") + " text-blue-600 shadow-none")
 
-  let _outlinePrimary = ((props.active || props.loading ? "border-blue-800 bg-blue-100 shadow-inner" : "bg-transparent border-blue-600 hover:bg-blue-50 hover:border-blue-700 hover:text-blue-800 active:bg-blue-100") + " text-blue-700 border")
-  let _outlineSecondary = ((props.active || props.loading ? "border-gray-800 bg-gray-100 shadow-inner" : "bg-transparent border-gray-600 hover:bg-gray-50 hover:border-gray-700 hover:text-gray-800 active:bg-gray-100") + " text-gray-700 border")
-  let _outlineSuccess = ((props.active || props.loading ? "border-green-800 bg-green-100 shadow-inner" : "bg-transparent border-green-600 hover:bg-green-50 hover:border-green-700 hover:text-green-800 active:bg-green-100") + " text-green-700 border")
-  let _outlineWarning = ((props.active || props.loading ? "border-yellow-800 bg-yellow-100 shadow-inner" : "bg-transparent border-yellow-600 hover:bg-yellow-50 hover:border-yellow-700 hover:text-yellow-800 active:bg-yellow-100") + " text-yellow-700 border")
-  let _outlineDanger = ((props.active || props.loading ? "border-red-800 bg-red-100 shadow-inner" : "bg-transparent border-red-600 hover:bg-red-50 hover:border-red-700 hover:text-red-800 active:bg-red-100") + " text-red-700 border")
-  let _outlineInfo = ((props.active || props.loading ? "border-purple-800 bg-purple-100 shadow-inner" : "bg-transparent border-purple-600 hover:bg-purple-100 hover:border-purple-700 hover:text-purple-800 active:bg-purple-200") + " text-purple-700 border")
-  let _outlineLight = ((props.active || props.loading ? "border-gray-500 bg-gray-100 shadow-inner" : "bg-transparent hover:text-gray-800 hover:bg-gray-50 border-gray-300 hover:border-gray-400 active:bg-gray-100") + " text-gray-700 border")
-  let _outlineDark = ((props.active || props.loading ? "border-gray-500 bg-gray-100 shadow-inner" : "bg-transparent hover:text-gray-800 border-gray-900 hover:bg-gray-50 hover:border-gray-700 active:bg-gray-100") + " text-gray-700 border")
-  let _outlineLink = ((props.active || props.loading ? "border-gray-500 bg-gray-100 shadow-inner" : "bg-transparent hover:text-gray-800 hover:bg-gray-50 border-gray-300 hover:border-gray-400 hover:text-blue-700 active:bg-gray-100") + " text-blue-600 border")
+  let _outlinePrimary = ((props.active || props.loading ? "border-blue-800 bg-blue-100 shadow-inner" : "bg-white border-blue-600 hover:bg-blue-50 hover:border-blue-700 hover:text-blue-800 active:bg-blue-100") + " text-blue-700 border")
+  let _outlineSecondary = ((props.active || props.loading ? "border-gray-800 bg-gray-100 shadow-inner" : "bg-white border-gray-600 hover:bg-gray-50 hover:border-gray-700 hover:text-gray-800 active:bg-gray-100") + " text-gray-700 border")
+  let _outlineSuccess = ((props.active || props.loading ? "border-green-800 bg-green-100 shadow-inner" : "bg-white border-green-600 hover:bg-green-50 hover:border-green-700 hover:text-green-800 active:bg-green-100") + " text-green-700 border")
+  let _outlineWarning = ((props.active || props.loading ? "border-yellow-800 bg-yellow-100 shadow-inner" : "bg-white border-yellow-600 hover:bg-yellow-50 hover:border-yellow-700 hover:text-yellow-800 active:bg-yellow-100") + " text-yellow-700 border")
+  let _outlineDanger = ((props.active || props.loading ? "border-red-800 bg-red-100 shadow-inner" : "bg-white border-red-600 hover:bg-red-50 hover:border-red-700 hover:text-red-800 active:bg-red-100") + " text-red-700 border")
+  let _outlineInfo = ((props.active || props.loading ? "border-purple-800 bg-purple-100 shadow-inner" : "bg-white border-purple-600 hover:bg-purple-100 hover:border-purple-700 hover:text-purple-800 active:bg-purple-200") + " text-purple-700 border")
+  let _outlineLight = ((props.active || props.loading ? "border-gray-500 bg-gray-100 shadow-inner" : "bg-white hover:text-gray-800 hover:bg-gray-50 border-gray-300 hover:border-gray-400 active:bg-gray-100") + " text-gray-700 border")
+  let _outlineDark = ((props.active || props.loading ? "border-gray-500 bg-gray-100 shadow-inner" : "bg-white hover:text-gray-800 border-gray-900 hover:bg-gray-50 hover:border-gray-700 active:bg-gray-100") + " text-gray-700 border")
+  let _outlineLink = ((props.active || props.loading ? "border-gray-500 bg-gray-100 shadow-inner" : "bg-white hover:text-gray-800 hover:bg-gray-50 border-gray-300 hover:border-gray-400 hover:text-blue-700 active:bg-gray-100") + " text-blue-600 border")
 
   let _variant = props.variant ? props.variant : "primary";
   let _loading = props.loading ? true : false;

@@ -4,16 +4,8 @@ import { Dialog, Transition } from '@headlessui/react'
 import { XIcon, ExclamationIcon } from '@heroicons/react/outline'
 import { LinkIcon, PlusSmIcon, QuestionMarkCircleIcon, BellIcon, SwitchHorizontalIcon, SwitchVerticalIcon, DotsHorizontalIcon, ChevronDownIcon} from '@heroicons/react/solid'
 
-import { breadcrumb as Crumbtrail } from '../components/teton/Data'
-
-import Alert from '../components/teton/Alert'
 import Button from '../components/teton/Button'
 import ButtonGroup from '../components/teton/ButtonGroup'
-import Breadcrumb from '../components/teton/Breadcrumb'
-import DropdownButton from '../components/teton/DropdownButton'
-import Dropdown from '../components/teton/Dropdown'
-import Panel from '../components/teton/Panel'
-import QuantumToolbar from '../components/teton/QuantumToolbar'
 
 import Showcase from '../components/site/Showcase'
 
@@ -66,38 +58,40 @@ function ButtonGroups() {
           </>
         } 
         syntaxBlock={
-          '<ButtonGroup variant="primary"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="secondary"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="success"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="warning"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="danger"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="info"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="light"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="dark"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup>'
+          '<> \n' +
+          '  <ButtonGroup variant="primary"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="secondary"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="success"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="warning"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="danger"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="info"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="light"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="dark"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '</>'
         }
         title="Button groups" 
       />
@@ -169,38 +163,40 @@ function ButtonGroups() {
           </>
         } 
         syntaxBlock={
-          '<ButtonGroup variant="outline-primary"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="outline-secondary"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="outline-success"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="outline-warning"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="outline-danger"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="outline-info"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="outline-light"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="outline-dark"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup>'
+          '<> \n' +
+          '  <ButtonGroup variant="outline-primary"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="outline-secondary"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="outline-success"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="outline-warning"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="outline-danger"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="outline-info"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="outline-light"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="outline-dark"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '</>'
         }
         title="Outline groups" 
       />
@@ -230,14 +226,16 @@ function ButtonGroups() {
           </>
         } 
         syntaxBlock={
-          '<ButtonGroup variant="outline-primary" rounded> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="outline-secondary" rounded> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup>'
+          '<> \n' +
+          '  <ButtonGroup variant="primary" rounded> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="secondary" rounded> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '</>'
         } 
         title="Rounded groups" 
       />
@@ -274,31 +272,33 @@ function ButtonGroups() {
           </>
         } 
         syntaxBlock={
-          '<ButtonGroup variant="primary" size="xl"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="primary" size="lg"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="primary" size="md"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="primary" size="sm"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup> \n' +
-          '<ButtonGroup variant="primary" size="xs"> \n' +
-          '  <Button text="Button" /> \n' +
-          '  <Button text="Button" /> \n' +
-          '</ButtonGroup>'}
+          '<> \n' +
+          '  <ButtonGroup variant="primary" size="xl"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="primary" size="lg"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="primary" size="md"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="primary" size="sm"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '  <ButtonGroup variant="primary" size="xs"> \n' +
+          '    <Button text="Button" /> \n' +
+          '    <Button text="Button" /> \n' +
+          '  </ButtonGroup> \n' +
+          '</>'}
         title="Group sizes" 
       />
-       <span class='prose'>  
+      <span class='prose'>  
         <h2>API</h2>
-        <p>Button</p>
+        <h3>Button</h3>
       </span>
 
         <div className="flex flex-col my-8">

@@ -140,14 +140,14 @@ function Header({orientation, collapsed}) {
                 <div class="p-3.5">
                   {collapsed
                     ?<h3 className="flex justify-center text-sm font-medium tracking-wide text-gray-600 uppercase jusity-center"><DotsHorizontalIcon className="w-6 h-6"/><span className="sr-only">Resources</span></h3>
-                    :<h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Layouts</h3>
+                    :<h3 className="text-sm font-medium tracking-wide text-gray-500 uppercase">Layout</h3>
                   }
                   <ul className="mt-5 space-y-6">
                     {layouts.map((item) => (
                       <li key={item.name} className="flow-root">
                         <a
                           href={item.href}
-                          className={(collapsed ? "justify-center" : "") + " flex items-center p-3 -m-3 text-base font-medium text-gray-400 rounded-md hover:bg-gray-50"}
+                          className={(collapsed ? "justify-center" : "") + " flex itemq s-center p-3 -m-3 text-base font-medium text-gray-400 rounded-md hover:bg-gray-50"}
                         >
                           <item.icon className="flex-shrink-0 w-6 h-6 text-gray-400" aria-hidden="true" />
                           {!collapsed && <span className="ml-4">{item.name}</span>}

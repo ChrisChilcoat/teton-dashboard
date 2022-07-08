@@ -1,4 +1,4 @@
-import React, { useState, Children } from "react";
+import React, { Children } from "react";
 import PropTypes from 'prop-types';
 
 import Button from './Button';
@@ -24,14 +24,13 @@ function ButtonGroup({ children, variant, label, size, rounded}) {
   let middle = 'rounded-r-none rounded-l-none mr-0 ml-0'
   let last = ((rounded ? 'rounded-r-full' : '') + ' rounded-l-none ml-0')
 
-  const [activeButton, setActiveButton] = useState();
   const arrayChildren = Children.toArray(children);
 
   return (
     <div role="group" aria-label={label} className="flex-1">  
       {Children.map(arrayChildren, (child, index) => {
-        return (     
-          <span onClick={!child.props.disabled ? () => setActiveButton(index) : null }>
+        return (  
+          <>   
             {child.type.name === 'Button' &&
               <Button
                 key={index}
@@ -43,11 +42,10 @@ function ButtonGroup({ children, variant, label, size, rounded}) {
                 secondaryIcon={child.props.secondaryIcon}
                 suffixClasses={ index === 0 ? first : index === (arrayChildren.length - 1) ? last : middle }
                 text={child.props.text}
-                active={!activeButton && child.props.active ? true : (index === activeButton ? true : false)}
+                active={child.props.active}
                 onClick={child.props.onClick}
-                onPress={() => setActiveButton(index)}
               >
-                 {child.props.children}
+                {child.props.children}
               </Button>
             }
             {child.type.name === 'DropdownButton' &&
@@ -60,15 +58,14 @@ function ButtonGroup({ children, variant, label, size, rounded}) {
                 secondaryIcon={child.props.secondaryIcon}
                 suffixClasses={ index === 0 ? first : index === (arrayChildren.length - 1) ? last : middle }
                 text={child.props.text}
-                active={!activeButton && child.props.active ? true : (index === activeButton ? true : false)}
+                active={child.props.active}
                 onClick={child.props.onClick}
-                onPress={() => setActiveButton(index)}
               >
-                 {child.props.children}
+                {child.props.children}
               </DropdownButton>
             }
-          </span>
-         )
+          </>
+        )
       })}
     </div>
   );

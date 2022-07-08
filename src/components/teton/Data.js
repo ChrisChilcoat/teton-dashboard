@@ -44,12 +44,14 @@ const data = [
 
 const components =  [
   { name: 'Alerts', href: 'teton-dashboard#/components/alerts', icon: InformationCircleIcon },
+  { name: 'Badges', href: 'teton-dashboard#/components/badges', icon: OfficeBuildingIcon },
   { name: 'Buttons', href: 'teton-dashboard#/components/buttons', icon: OfficeBuildingIcon },
   { name: 'Button Groups', href: 'teton-dashboard#/components/button-groups', icon: OfficeBuildingIcon },
 ]
 
 const layouts =  [
-  { name: 'Three Column', href: 'teton-dashboard#/layouts/three-column-layout', icon: OfficeBuildingIcon },
+  { name: 'Grid', href: 'teton-dashboard#/layout/grid', icon: OfficeBuildingIcon },
+  { name: 'Stacks', href: 'teton-dashboard#/layout/stack', icon: OfficeBuildingIcon },
 ]
 
 const company = [
