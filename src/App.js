@@ -1,3 +1,4 @@
+
 import React from "react"
 
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
@@ -15,6 +16,7 @@ import GridsPage from "./pages/GridsPage"
 import StacksPage from "./pages/StacksPage"
 import BadgesPage from "./pages/BadgesPage"
 
+
 import { default as TetonHeader } from "./components/teton/Header"
 
 import Container from "./components/teton/Container"
@@ -23,14 +25,13 @@ import Col from "./components/teton/Col"
 import Stack from "./components/teton/Stack"
 
 
-
 export default function App() {
   return (
     <>   
       <Router basename={process.env.PUBLIC_URL}>
         <ScrollToTop>
           <Switch>
-            <Route path="/layout/grid">             
+            <Route path="/layout/grid">  
              <DashboardLayout 
                 header={<TetonHeader/>}
                 main={<GridsPage/>}              
